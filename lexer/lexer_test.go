@@ -6,8 +6,12 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input := "a=1+3;"
+	input := "let a = 1 + 3;"
 	expectedTokens := []token.Token{
+		{
+			Type:token.LET,
+			Literal:"let",
+		},
 		{
 			Type:    token.IDENT,
 			Literal: "a",
